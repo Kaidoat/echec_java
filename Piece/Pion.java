@@ -7,7 +7,8 @@ public class Pion extends Piece {
 
   @Override
   public boolean mouvementValide(int newX, int newY, Echequier echiquier) {
-    int direction = (couleur == Couleur.BLANC) ? -1 : 1;
+    int direction = (couleur == Couleur.BLANC) ? 1 : -1;
+
     return newX == x && newY == y + direction;
   }
 }

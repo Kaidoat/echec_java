@@ -24,6 +24,7 @@ public class EchequierUI extends GridPane {
   }
 
   private void dessinerEchequier(){
+
     for(int l=0; l< MAX_CASE; l++){
       for (int c = 0; c < MAX_CASE; c++){
         Rectangle caseEchequier = new Rectangle(TAILLE_CASE,TAILLE_CASE);
@@ -72,6 +73,7 @@ public class EchequierUI extends GridPane {
     nomFichier += piece.getCouleur() == Couleur.BLANC ? "_blanc.png": "_noir.png";
     return new Image(getClass().getResourceAsStream("/image/"+ nomFichier));
   }
+
   private void mettreAJourPlateau(){
     this.getChildren().removeIf(node-> node instanceof ImageView);
     placerPieces();

@@ -7,6 +7,8 @@ public class Echequier {
   private final int MAX_CASE=8;
   private Map<String, Piece> plateau = new HashMap<>();
 
+
+
   public Echequier(){
     initialiserEchequier();
   }
@@ -22,6 +24,27 @@ public class Echequier {
     plateau.put(getKey(4, 7), new Roi(Couleur.NOIR,4,7));
     plateau.put(getKey(3, 0), new Reine(Couleur.BLANC,3,0));
     plateau.put(getKey(3, 7), new Reine(Couleur.NOIR,3,7));
+
+    // TOUR
+    plateau.put(getKey(0, 7), new Tour(Couleur.NOIR,0,7));
+    plateau.put(getKey(7, 7), new Tour(Couleur.NOIR,7,7));
+
+    plateau.put(getKey(0, 0), new Tour(Couleur.BLANC,0,0));
+    plateau.put(getKey(7, 0), new Tour(Couleur.BLANC,7,0));
+
+    // Cavalier
+    plateau.put(getKey(1, 7), new Cavalier(Couleur.NOIR,1,7));
+    plateau.put(getKey(6, 7), new Cavalier(Couleur.NOIR,6,7));
+
+    plateau.put(getKey(1, 0), new Cavalier(Couleur.BLANC,1,0));
+    plateau.put(getKey(6, 0), new Cavalier(Couleur.BLANC,6,0));
+
+    //fou
+    plateau.put(getKey(2, 7), new Fou(Couleur.NOIR,2,7));
+    plateau.put(getKey(5, 7), new Fou(Couleur.NOIR,5,7));
+
+    plateau.put(getKey(2, 0), new Fou(Couleur.BLANC,2,0));
+    plateau.put(getKey(5, 0), new Fou(Couleur.BLANC,5,0));
   }
 
   public boolean deplacerPiece(int x, int y, int newX, int newY){
